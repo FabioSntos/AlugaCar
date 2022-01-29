@@ -1,0 +1,13 @@
+{
+  "name": "alugueldecarros",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "FabioSntos <Fabio_santos_2001@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13"
+  }
+}
