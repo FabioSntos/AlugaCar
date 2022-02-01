@@ -6,12 +6,14 @@ const categoriesRoutes = Router();
 const categoriesRepository = new CategoriesRepository();
 
 categoriesRoutes.post("/", (req, res) => {
-	const {name, description} = req.body
+	const { name, description } = req.body;
 
-	const createCategoryServicve = new CreateCategoryService(categoriesRepository);
+	const createCategoryServicve = new CreateCategoryService(
+		categoriesRepository
+	);
 
-	createCategoryServicve.execute({ name, description })
-	
+	createCategoryServicve.execute({ name, description });
+
 	return res.status(201).send();
 });
 
