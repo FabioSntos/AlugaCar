@@ -6,6 +6,7 @@ export class ImportCategoryController {
 	handle(req: Request, res: Response): Response {
 		const { file } = req;
 
+		//@ts-expect-error
 		this.importCategoryUseCase.execute(file);
 
 		return res.send();
