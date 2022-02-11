@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { SpecificationsRepository } from "../../repositories/implementations/SpecificationsRepository";
+
 import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase";
 
 export class CreateSpecificationController {
