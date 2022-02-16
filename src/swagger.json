@@ -5,5 +5,79 @@
     "description": "Rent API Documentation",
     "version": "1.0.0",
     "contanct": "fabio"
+  },
+  "paths": {
+    "/categories": {
+      "post": {
+        "tags": [
+          "category"
+        ],
+        "summary": "Create a new category",
+        "description": "Create a new category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Cars"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Cars for rent"
+                  }
+                },
+                "example": {
+                  "name": "category name example",
+                  "description": "category description example"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation"
+          },
+          "500": {
+            "description": "category already exists"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "category"
+        ],
+        "summary": "Get all categories",
+        "description": "Get all categories",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "propperties": {
+                      "name": {
+                        "type": "string",
+                        "example": "Cars"
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "Cars for rent"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
