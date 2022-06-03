@@ -5,4 +5,5 @@ import { specificationRoutes } from "./specification.routes";
 export const router = Router();
 
 router.use("/categories", categoriesRoutes);
+console.log("teste");
 router.use("/specifications", specificationRoutes);
