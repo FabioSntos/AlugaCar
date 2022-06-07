@@ -7,6 +7,7 @@
 			"name": "Docker: Attach to Node",
 			"port": 9229,
 			"address": "localhost",
+			"remoteRoot": "/usr/app/",
 			"sourceMapPathOverrides": {
 				"/usr/app/*": "${workspaceRoot}/*"
 			}
