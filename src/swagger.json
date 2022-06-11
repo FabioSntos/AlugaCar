@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Rentalx Documentation",
-    "description": "Rent API Documentation",
+    "title": "Alugacar Documentation",
+    "description": "alugacar API Documentation",
     "version": "1.0.0",
     "contanct": "fabio"
   },
@@ -76,6 +76,76 @@
               }
             }
           }
+        }
+      }
+    },
+    "/categories/import": {
+      "post": {
+        "tags": [
+          "category"
+        ],
+        "summary": "Upload categories",
+        "description": "Upload categories",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "created"
+          }
+        }
+      }
+    },
+    "/specifications": {
+      "post": {
+        "tags": [
+          "specification"
+        ],
+        "summary": "Create a new specification",
+        "description": "Create a new specification",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Specification"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation"
+          },
+          "500": {
+            "description": "specification already exists"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Specification": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Model"
+        },
+        "description": {
+          "type": "string",
+          "example": "Model of the car"
         }
       }
     }
